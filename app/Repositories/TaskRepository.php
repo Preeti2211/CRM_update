@@ -213,12 +213,14 @@ class TaskRepository implements TaskInterface
              else if(count($status) > 0){
                 $startedAt = $status[0]->started;
                 $totalTime = now()->diffInMinutes($startedAt);
-                if ($totalTime > 59) {
+                if ($totalTime > 59) 
+                {
                     $totalTime = $totalTime / 60;
                 }
                 $hour = $status[0];
                 $hour->development_hours = $totalTime;
                 $hour->save();
+                
             }
             $task->status = $item;
             if ($item == "pause" || $item == "in progress" ) {
