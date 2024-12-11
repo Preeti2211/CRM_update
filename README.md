@@ -72,4 +72,8 @@ for Public Diretory :
 For Migration ;
  php artisan migrate
 
+ For Seeders:
+ 
+php artisan db:seed
+
 git password = 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

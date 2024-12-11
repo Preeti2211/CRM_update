@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('projects', function (Blueprint $table) {
            $table->date('start_date')->change();
-           $table->date('end_date')->change();
+        //    $table->date('end_date')->change();
         });
     }
 

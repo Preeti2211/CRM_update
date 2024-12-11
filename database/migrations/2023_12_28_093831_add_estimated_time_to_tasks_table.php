@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->renameColumn('hour_worked','development_hours');
-            $table->float('debugging_hours',10,2)->default(0);
-            $table->integer('is_debugging')->default(0);
+            $table->renameColumn('hour_worked', 'development_hours');
+            // $table->float('debugging_hours',10,2)->default(0);
+            // $table->integer('is_debugging')->default(0);
             $table->renameColumn('started_at','started');
-            $table->integer('estimated');
+            // $table->integer('estimated');
         });
     }
 
@@ -26,6 +26,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('tasks', function (Blueprint $table) {
+            $table->renameColumn('development_hours', 'hour_worked');
 
         });
     }
